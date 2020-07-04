@@ -1,9 +1,12 @@
 import React from 'react';
 import { Home } from '../page/Home';
+import { RecoilRoot } from 'recoil';
 
 function App() {
   return (
-    <Home />
+    <RecoilRoot>
+      <Home />
+    </RecoilRoot>
   );
 }
 
