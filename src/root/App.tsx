@@ -1,10 +1,9 @@
 import React from 'react';
+import { Home } from '../page/Home';
 
 function App() {
   return (
-    <div className="App">
-      <p>Hello Recoil</p>
-    </div>
+    <Home />
   );
 }
 
