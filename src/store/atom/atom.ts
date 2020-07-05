@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
 
 type Todo = {
-  id: number;
+  id: string;
   title: string;
   completed: boolean;
 };
