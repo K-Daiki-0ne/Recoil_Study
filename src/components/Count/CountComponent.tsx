@@ -1,8 +1,8 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
-import { textCountState } from '../../store/index';
+import { textCountState } from '../../store/selector/selector';
 
-export function CountComponent() {
+function CountComponent() {
   const count = useRecoilValue(textCountState);
 
   return (
@@ -11,3 +11,5 @@ export function CountComponent() {
     </>
   )
 }
+
+export default CountComponent

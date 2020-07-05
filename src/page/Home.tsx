@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
-import { textState } from '../store/index';
-import { CountComponent } from '../components/index';
+import { textState } from '../store/atom/atom';
+import CountComponent from '../components/Count/CountComponent';
 
 export function Home() {
   const [text, setText] = useRecoilState(textState);
