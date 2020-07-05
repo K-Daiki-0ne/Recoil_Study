@@ -1,10 +1,5 @@
 import { atom } from 'recoil';
-
-type Todo = {
-  id: string;
-  title: string;
-  completed: boolean;
-};
+import { Todo } from '../../types/todo';
 
 const initialTodo: Todo[] = [];
 
