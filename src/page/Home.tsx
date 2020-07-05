@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import { textState } from '../store/index';
+import { CountComponent } from '../components/index';
 
 export function Home() {
   const [text, setText] = useRecoilState(textState);
@@ -18,6 +19,7 @@ export function Home() {
       />
       <br />
       <p>Echo: {text}</p>
+      <CountComponent />
     </div>
   );
 }
