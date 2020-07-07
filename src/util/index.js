@@ -1,2 +1,2 @@
-export { replaceTodoAtIndex } from './remove';
+export { replaceTodoAtIndex } from './replace';
 export { removeTodoAtIndex } from './remove';

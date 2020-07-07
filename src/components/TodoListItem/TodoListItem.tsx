@@ -47,7 +47,7 @@ export const TodoListItem: React.FC<TodoProps> =({ todo })=> {
         checked={todo.completed}
         onChange={toggleItemCompletion}
       />
-      <button onClick={deleteItem}>✖️</button>
+      <button onClick={deleteItem}>Delete</button>
     </div>
   )
 }

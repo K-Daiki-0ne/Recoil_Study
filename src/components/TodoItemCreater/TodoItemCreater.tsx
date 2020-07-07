@@ -5,11 +5,12 @@ import { useTodo } from '../../hooks/useTodo';
 export function TodoItemCreater() {
   const [inputValue, setInputValue] = useState('');
 
+  const addTodo = useTodo();
+
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   }
   const onClick = () => {
-    const addTodo = useTodo();
     addTodo(inputValue);
     setInputValue('');
   }
@@ -18,7 +19,7 @@ export function TodoItemCreater() {
     <>
       <input 
         type='text'
-        value='inputValue'
+        value={inputValue}
         onChange={onChange}
       />
       <button
