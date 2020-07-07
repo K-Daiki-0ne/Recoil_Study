@@ -1,4 +1,4 @@
-function replaceTodoAtIndex(arr, index, newValue) {
+export function replaceTodoAtIndex(arr, index, newValue) {
   return [
     ...arr.slice(0, index),
     newValue,
