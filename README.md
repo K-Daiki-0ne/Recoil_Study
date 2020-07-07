@@ -61,3 +61,16 @@ yarn add
 ```
 yarn start
 ```
+
+<br>
+
+### Recoilを使用した感想
+使いやすいです。簡単に状態管理ができる印象です。<br>
+今回はTypeScriptで記述しましたが現時点ではRecoilの型定義ファイルは有志の開発のみで公式にはリリースされていないようなので型定義ファイルは[こちら](https://qiita.com/serinuntius/items/3d6519988233d7ba643c)に型定義のソースコードが載せていたので、利用されていただきました。<br>
+Recoilはカスタムフックとの相性が状態管理のライブラリの中でも特に優れている印象を抱いたので、今後も機会があれば利用していきたいと考えています。
+
+## 参考資料
+- [Recoil
+A state management library for React](https://recoiljs.org/)
+- [話題の「Recoil」を使ってTodoアプリ作ってみた with TypeScript](https://qiita.com/serinuntius/items/3d6519988233d7ba643c)
+- [ReduxのサンプルTODOアプリをRecoilを使って書く](https://qrunch.net/@Catminusminus/entries/SzU0RYinBLhucxsk?ref=qrunch)
