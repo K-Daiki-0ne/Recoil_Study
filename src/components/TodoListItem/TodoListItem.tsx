@@ -6,7 +6,10 @@ import {
   replaceTodoAtIndex,
   removeTodoAtIndex 
 } from '../../util/index.js';
-import { Button } from '@material-ui/core';
+import { 
+  Button,
+  Checkbox
+} from '@material-ui/core';
 
 type TodoProps = {
   todo: Todo
@@ -43,8 +46,7 @@ export const TodoListItem: React.FC<TodoProps> =({ todo })=> {
   return (
     <div>
       <input type='text' value={todo.title} onChange={editItemText} />
-      <input 
-        type='checkbox'
+      <Checkbox 
         checked={todo.completed}
         onChange={toggleItemCompletion}
       />
