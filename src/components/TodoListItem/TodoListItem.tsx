@@ -6,6 +6,7 @@ import {
   replaceTodoAtIndex,
   removeTodoAtIndex 
 } from '../../util/index.js';
+import { Button } from '@material-ui/core';
 
 type TodoProps = {
   todo: Todo
@@ -47,7 +48,11 @@ export const TodoListItem: React.FC<TodoProps> =({ todo })=> {
         checked={todo.completed}
         onChange={toggleItemCompletion}
       />
-      <button onClick={deleteItem}>Delete</button>
+      <Button
+        onClick={deleteItem}
+      >
+        Delete
+      </Button>
     </div>
   )
 }
