@@ -1,7 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { useTodo } from '../../hooks/useTodo';
-import { Button } from '@material-ui/core';
+import { 
+  Button,
+  TextField
+ } from '@material-ui/core';
 
 export function TodoItemCreater() {
   const [inputValue, setInputValue] = useState('');
@@ -18,12 +21,14 @@ export function TodoItemCreater() {
 
   return (
     <>
-      <input 
+      <TextField 
+        size='medium'
         type='text'
         value={inputValue}
         onChange={onChange}
       />
       <Button
+        variant="contained"
         onClick={onClick}
       >
         Add
