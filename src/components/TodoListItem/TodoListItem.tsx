@@ -12,6 +12,7 @@ import {
   TextField,
   Container
 } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 type TodoProps = {
   todo: Todo
@@ -67,7 +68,9 @@ export const TodoListItem: React.FC<TodoProps> =({ todo })=> {
           onClick={deleteItem}
           size='small'
         >
-          Delete
+          <DeleteIcon 
+            fontSize='small'
+          />
         </Button>
       </Container>
     </div>

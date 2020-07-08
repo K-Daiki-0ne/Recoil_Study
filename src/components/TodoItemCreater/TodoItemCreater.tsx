@@ -5,6 +5,7 @@ import {
   Button,
   TextField
  } from '@material-ui/core';
+ import SendIcon from '@material-ui/icons/Send';
 
 export function TodoItemCreater() {
   const [inputValue, setInputValue] = useState('');
@@ -30,8 +31,11 @@ export function TodoItemCreater() {
       <Button
         variant="contained"
         onClick={onClick}
+        size='small'
       >
-        Add
+        <SendIcon 
+          fontSize='small'
+        />
       </Button>
     </>
   )
