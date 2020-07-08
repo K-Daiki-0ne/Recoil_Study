@@ -8,7 +8,8 @@ import {
 } from '../../util/index.js';
 import { 
   Button,
-  Checkbox
+  Checkbox,
+  TextField
 } from '@material-ui/core';
 
 type TodoProps = {
@@ -45,7 +46,11 @@ export const TodoListItem: React.FC<TodoProps> =({ todo })=> {
 
   return (
     <div>
-      <input type='text' value={todo.title} onChange={editItemText} />
+      <TextField 
+        type='text'
+        value={todo.title}
+        onChange={editItemText}
+      />
       <Checkbox 
         color='primary'
         checked={todo.completed}
