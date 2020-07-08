@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useTodo } from '../../hooks/useTodo';
+import { Button } from '@material-ui/core';
 
 export function TodoItemCreater() {
   const [inputValue, setInputValue] = useState('');
@@ -22,11 +23,11 @@ export function TodoItemCreater() {
         value={inputValue}
         onChange={onChange}
       />
-      <button
+      <Button
         onClick={onClick}
       >
         Add
-      </button>
+      </Button>
     </>
   )
 }
