@@ -47,6 +47,7 @@ export const TodoListItem: React.FC<TodoProps> =({ todo })=> {
     <div>
       <input type='text' value={todo.title} onChange={editItemText} />
       <Checkbox 
+        color='primary'
         checked={todo.completed}
         onChange={toggleItemCompletion}
       />
