@@ -34,7 +34,11 @@ Reactの公式の状態管理ライブラリではない。<br>
 
 - React - 16.13.1
 
+- TypeScript - 3.7.2
+
 - Recoil - 0.0.10
+
+- @material-ui/core - 4.11.0
 
 ### command
 local環境での実行コマンド
