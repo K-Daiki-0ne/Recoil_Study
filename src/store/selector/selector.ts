@@ -4,7 +4,7 @@ import {
   todoListFilterState
 } from '../atom/atom';
 
-const filterTodoListState = selector({
+export const filterTodoListState = selector({
   key: 'filterTodoListState',
   get: ({ get }) => {
     const filetr = get(todoListFilterState);
@@ -18,5 +18,25 @@ const filterTodoListState = selector({
       default:
         return list;
     }
+  }
+})
+
+export const todoListStatsState = selector({
+  key: 'todoListStatsState',
+  get: ({ get }) => {
+    const todoList = get(todoListState);
+    const totalNum = todoList.length;
+    const totalCompletedNum = todoList.filter((item) => item.completed).length;
+    const totalUnCompletedNum = todoList.filter((item) => !item.completed).length;
+    const percentCompleted = totalNum === 0 
+      ? 0
+      : totalCompletedNum / totalNum;
+    
+    return {
+      totalNum,
+      totalCompletedNum,
+      totalUnCompletedNum,
+      percentCompleted
+    };
   }
 })
