@@ -5,26 +5,22 @@ import {
 } from '../atom/atom';
 import { Todo } from '../../types/todo';
 
-const getVisibleTodo = (list: Todo[], filter: string) => {
-  switch(filter) {
-    case 'Show All':
-      return list;
-    case 'Show Completed':
-      return list.filter((todo) => todo.completed);
-    case 'Show UnCompleted':
-      return list.filter((todo) => !todo.completed);
-    default:
-      throw new Error(`Sorry Not ${filter}`);
-  }
-}
-
 export const filterTodoListState = selector({
   key: 'filterTodoListState',
   get: ({ get }) => {
-    const filetr = get(todoListFilterState);
-    const list = get(todoListState);
-    
-    getVisibleTodo(list, filetr);
+    const filter: string = get(todoListFilterState);
+    const list: Todo[] = get(todoListState);
+
+    switch(filter) {
+      case 'Show Completed':
+        return list.filter((item) => item.completed);
+      case 'Show Uncompleted':
+        return list.filter((item) => !item.completed);
+      case 'Show All':
+        return list;
+      default:
+        throw new Error(`Unknown filter ${filter}`);
+    }
   }
 })
 
