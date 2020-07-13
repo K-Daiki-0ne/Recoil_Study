@@ -14,15 +14,17 @@ export function TodoListStats() {
 
   const formattedPercentCompleted: number = Math.round(percentCompleted * 100);
 
+  const classes = useStyle();
+
   return (
     <div>
-      <Paper>
+      <Paper className={classes.paper}>
         Total items: {totalNum}
       </Paper>
-      <Paper>
+      <Paper className={classes.paper}>
         Items Completed: {totalCompletedNum}
       </Paper>
-      <Paper>
+      <Paper className={classes.paper}>
         Items Not Completes: {totalUnCompletedNum}
       </Paper>
       <Paper>
