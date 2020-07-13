@@ -6,11 +6,14 @@ import {
   TextField
  } from '@material-ui/core';
  import SendIcon from '@material-ui/icons/Send';
+ import { useStyle } from './style';
 
 export function TodoItemCreater() {
   const [inputValue, setInputValue] = useState('');
 
   const addTodo = useTodo();
+
+  const classes = useStyle();
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -22,21 +25,23 @@ export function TodoItemCreater() {
 
   return (
     <>
-      <TextField 
-        size='medium'
-        type='text'
-        value={inputValue}
-        onChange={onChange}
-      />
-      <Button
-        variant="contained"
-        onClick={onClick}
-        size='small'
-      >
-        <SendIcon 
-          fontSize='small'
+      <div className={classes.root}>
+        <TextField 
+          size='medium'
+          type='text'
+          value={inputValue}
+          onChange={onChange}
         />
-      </Button>
+        <Button
+          variant="contained"
+          onClick={onClick}
+          size='small'
+        >
+          <SendIcon 
+            fontSize='small'
+          />
+        </Button>
+      </div>
     </>
   )
 }

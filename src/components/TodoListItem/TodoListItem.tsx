@@ -10,9 +10,9 @@ import {
   Button,
   Checkbox,
   TextField,
-  Container
 } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { useStyle } from './style';
 
 type TodoProps = {
   todo: Todo
@@ -21,6 +21,8 @@ type TodoProps = {
 export const TodoListItem: React.FC<TodoProps> =({ todo })=> {
   const [todoList, setTodoList] = useRecoilState(todoListState);
   const index = todoList.findIndex((listItem) => listItem === todo);
+
+  const classes = useStyle();
   
   const editItemText = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newTodo = replaceTodoAtIndex(todoList, index, {
@@ -47,32 +49,28 @@ export const TodoListItem: React.FC<TodoProps> =({ todo })=> {
 
 
   return (
-    <div>
-      <Container
-        fixed
-        maxWidth='sm'
+    <div className={classes.root}>
+      <TextField 
+        type='text'
+        value={todo.title}
+        onChange={editItemText}
+        size='small'
+        className={classes.text}
+      />
+      <Checkbox 
+        color='primary'
+        checked={todo.completed}
+        onChange={toggleItemCompletion}
+      />
+      <Button
+        variant="contained"
+        onClick={deleteItem}
+        size='small'
       >
-        <TextField 
-          type='text'
-          value={todo.title}
-          onChange={editItemText}
-          size='small'
+        <DeleteIcon 
+          fontSize='small'
         />
-        <Checkbox 
-          color='primary'
-          checked={todo.completed}
-          onChange={toggleItemCompletion}
-        />
-        <Button
-          variant="contained"
-          onClick={deleteItem}
-          size='small'
-        >
-          <DeleteIcon 
-            fontSize='small'
-          />
-        </Button>
-      </Container>
+      </Button>
     </div>
   )
 }

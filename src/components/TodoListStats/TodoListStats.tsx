@@ -27,7 +27,7 @@ export function TodoListStats() {
       <Paper className={classes.paper}>
         Items Not Completes: {totalUnCompletedNum}
       </Paper>
-      <Paper>
+      <Paper className={classes.paper}>
         Percent Completed: {formattedPercentCompleted}
       </Paper>
     </div>
