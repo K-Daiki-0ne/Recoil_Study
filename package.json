@@ -15,6 +15,7 @@
     "@types/recoil": "^0.0.1",
     "@types/shortid": "^0.0.29",
     "jest": "^26.1.0",
+    "jest-dom": "^4.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
