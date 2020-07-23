@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering test App.tsx 1`] = `
+<RecoilRoot>
+  <Home />
+</RecoilRoot>
+`;
