@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render test rendering test for Home.tsx 1`] = `
+<RecoilRoot>
+  <WithStyles(ForwardRef(Container))
+    fixed={true}
+    maxWidth="xs"
+  >
+    <TodoList />
+  </WithStyles(ForwardRef(Container))>
+</RecoilRoot>
+`;
