@@ -20,6 +20,6 @@
     "jsx": "react"
   },
   "include": [
-    "src", "<rootDir>/src"
+    "src", "<rootDir>/src/setuoTest.ts"
   ]
 }
