@@ -68,6 +68,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "jest": "react-scripts test --coverage --runInBand --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
