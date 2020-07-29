@@ -5,8 +5,9 @@ import ReactSixteenAdapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new ReactSixteenAdapter() });
 
-
-test('rendering test App.tsx', () => {
-  const component = shallow(<App />);
-  expect(component).toMatchSnapshot();
+describe('Render test', () => {
+  test('rendering test App.tsx', () => {
+    const component = shallow(<App />);
+    expect(component).toMatchSnapshot();
+  });
 });
