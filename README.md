@@ -1,5 +1,7 @@
 # Recoil_Study
 
+[制作プロジェクト](https://5f2179a522839569c4f1a935--nifty-kare-a9645b.netlify.app/)
+
 ## Recoilの学習のためのプロジェクト
 
 Recoilの型定義ファイルは現時点では公開されていないと記述していますが、公開されています。
@@ -52,6 +54,10 @@ Reactの公式の状態管理ライブラリではない。<br>
 
 - @material-ui/core - 4.11.0
 
+- deploy - netlify
+
+- netlify - netlify-cli/2.58.0
+
 ### command
 local環境での実行コマンド
 - git
@@ -65,6 +71,7 @@ ssh
 ```
 git@github.com:K-Daiki-0ne/Recoil_Study.git
 ```
+
 - npm
 ```
 npm install
@@ -80,6 +87,15 @@ yarn add
 
 ```
 yarn start
+```
+
+Docker
+```
+docker build -t recoil ./
+```
+
+```
+docekr run -it --name recoil -p 3000:3000 -v $PWD:/usr/src/app recoil
 ```
 
 <br>
