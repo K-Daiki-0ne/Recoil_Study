@@ -3,11 +3,11 @@ jobs:
   build:
     docker:
       - image: circleci/node
-
-    working_directory: 'recoil-tutorial'
+      
+    working_directory: ~/recoil-tutorial
     steps:
       - checkout:
-          path: '~/recoil_tutorial'
+          path: ~/recoil_tutorial
       - restore_cashe:
           key: recoil_tutorial-{{ .Branch }}-{{ checksum "package.json" }}
       - run: 
@@ -22,10 +22,10 @@ jobs:
   test: 
     docker:
       - image: circleci/node
-      working_directory: 'recoil-tutorial'
+      working_directory: ~/recoil-tutorial
       steps:
         - checkout:
-            path: '~/recoil_tutorial'
+            path: ~/recoil_tutorial
         - restore_cashe:
             key: recoil_tutorial-{{ .Branch }}-{{ checksum "package.json" }}
         - run: 
@@ -40,10 +40,10 @@ jobs:
   deploy:
     docker: 
       - image: circleci/node 
-      working_directory: 'recoil-tutorial'
+      working_directory: ~/recoil-tutorial
       steps:
         - checkout:
-            path: '~/recoil_tutorial'
+            path: ~/recoil_tutorial
         - restore_cashe:
             key: recoil_tutorial-{{ .Branch }}-{{ checksum "package.json" }}
         - run: 
