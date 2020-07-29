@@ -5,9 +5,3 @@ exports[`Render test rendering test App.tsx 1`] = `
   <Home />
 </RecoilRoot>
 `;
-
-exports[`rendering test App.tsx 1`] = `
-<RecoilRoot>
-  <Home />
-</RecoilRoot>
-`;

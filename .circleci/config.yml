@@ -26,6 +26,8 @@ jobs:
       # run tests!
       - run: yarn test
 
+      - run: yarn test -u
+
       - run: yarn build
 
       - run: yarn deploy
