@@ -24,3 +24,5 @@ yarn-error.log*
 
 # snapshot
 src/__tests__/__snapshots__
+# Local Netlify folder
+.netlify
