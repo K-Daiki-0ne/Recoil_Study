@@ -1,17 +1,70 @@
 version: 2.1
-orbs:
-  node: circleci/node@1.1.6
 jobs:
-  build-and-test:
-    executor:
-      name: node/default
+  build:
+    docker:
+      - image: circleci/node
+
+    working_directory: 'recoil-tutorial'
     steps:
-      - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm test
+      - checkout:
+          path: '~/recoil_tutorial'
+      - restore_cashe:
+          key: recoil_tutorial-{{ .Branch }}-{{ checksum "package.json" }}
+      - run: 
+          name: Install node_modules
+          command: yarn install
+      - run:
+          name: build
+          command: yarn build
+      - save_cashe:
+          key: recoil_tutorial-{{ .Branch }}-{{ checksum "package.json" }}
+          path: ~/recoil_tutorial/node_modules
+  test: 
+    docker:
+      - image: circleci/node
+      working_directory: 'recoil-tutorial'
+      steps:
+        - checkout:
+            path: '~/recoil_tutorial'
+        - restore_cashe:
+            key: recoil_tutorial-{{ .Branch }}-{{ checksum "package.json" }}
+        - run: 
+            name: Install node_modules
+            command: yarn install
+        - run:
+            name: Build
+            command: yarn build
+        - run:
+            name: Test
+            command: yarn test
+  deploy:
+    docker: 
+      - image: circleci/node 
+      working_directory: 'recoil-tutorial'
+      steps:
+        - checkout:
+            path: '~/recoil_tutorial'
+        - restore_cashe:
+            key: recoil_tutorial-{{ .Branch }}-{{ checksum "package.json" }}
+        - run: 
+            name: Install node_modules
+            command: yarn install
+        - run:
+            name: Install netlify cli
+            command: yarn global add netlify-cli
+        - run:
+            name: Build
+            command: yarn build
+        - run:
+            name: Deploy
+            command: yarn deploy
 workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
+  client:
+    jobs:
+      - build:
+      - test:
+        requires:
+          - build:
+      - deploy:
+        requires:
+          - build:
